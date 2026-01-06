@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Angelin Virsa Irwanto | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #f5f7fa;
+            --bg-card: rgba(255, 255, 255, 0.8);
+            --text-primary: #1a1a2e;
+            --text-muted: #4a5568;
+            --accent: #6366f1;
+            --accent-secondary: #ec4899;
+            --accent-glow: rgba(99, 102, 241, 0.2);
+            --border: rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Instrument Sans', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.7;
+            font-size: 18px;
+        }
+
+        #three-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.5rem 4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            letter-spacing: 0.1em;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 4rem;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.85rem;
+            background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        .hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3.5rem, 10vw, 8rem);
+            line-height: 0.95;
+            letter-spacing: -0.02em;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero h1 span {
+            display: block;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-muted) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero h1 .accent {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .hero-description {
+            font-size: 1.35rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            animation: fadeInUp 0.8s ease 0.6s forwards;
+            opacity: 0;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            color: white;
+            box-shadow: 0 0 30px var(--accent-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 50px var(--accent-glow);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-card);
+            border-color: var(--text-muted);
+        }
+
+        .btn-small {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.8rem;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 3rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            animation: bounce 2s infinite;
+        }
+
+        .scroll-indicator::after {
+            content: '';
+            width: 1px;
+            height: 40px;
+            background: linear-gradient(to bottom, var(--text-muted), transparent);
+        }
+
+        section {
+            position: relative;
+            z-index: 1;
+            padding: 8rem 4rem;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            letter-spacing: 0.02em;
+        }
+
+        .section-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s ease;
+        }
+
+        .skill-category:hover {
+            border-color: var(--accent);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-category-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-category h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.02em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            padding: 0.4rem 0.8rem;
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            border-radius: 100px;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: rgba(99, 102, 241, 0.2);
+            border-color: var(--accent);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            position: relative;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-card.featured {
+            grid-column: span 2;
+        }
+
+        .project-image {
+            width: 100%;
+            aspect-ratio: 16/10;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 30%, var(--accent-glow), transparent 60%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .project-card:hover .project-image::before {
+            opacity: 1;
+        }
+
+        .project-image-icon {
+            font-size: 4rem;
+            opacity: 0.3;
+            transition: all 0.4s ease;
+        }
+
+        .project-card:hover .project-image-icon {
+            transform: scale(1.1);
+            opacity: 0.5;
+        }
+
+        .project-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.4rem 1rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            border-radius: 100px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .project-badge.upcoming {
+            background: linear-gradient(135deg, #f59e0b, #ef4444);
+        }
+
+        .project-info {
+            padding: 2rem;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            padding: 0.3rem 0.8rem;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 100px;
+            font-size: 0.75rem;
+            color: var(--accent);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .project-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.02em;
+        }
+
+        .project-description {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-highlights {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .project-highlights li {
+            position: relative;
+            padding-left: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: var(--text-muted);
+        }
+
+        .project-highlights li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .education-timeline {
+            position: relative;
+            max-width: 900px;
+        }
+
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent), var(--accent-secondary), transparent);
+        }
+
+        .education-item {
+            position: relative;
+            padding-left: 3rem;
+            padding-bottom: 4rem;
+        }
+
+        .education-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        .education-year {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 100px;
+            font-size: 0.95rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .education-degree {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.02em;
+        }
+
+        .education-school {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-details {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .about-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .about-avatar {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
+            border: 4px solid var(--border);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-image {
+            aspect-ratio: 4/5;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 30%, var(--accent-glow), transparent 60%);
+        }
+
+        .about-image-placeholder {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 5rem;
+            color: var(--border);
+        }
+
+        .about-text h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            letter-spacing: 0.02em;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            line-height: 1.9;
+        }
+
+        .languages {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .language-item {
+            padding: 0.6rem 1.2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.9rem;
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact-content h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-content p {
+            color: var(--text-muted);
+            font-size: 1.15rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .contact-method-icon {
+            font-size: 1.2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.8rem;
+            background: var(--bg-card);
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: rgba(99, 102, 241, 0.1);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .social-link:hover {
+            color: var(--accent);
+        }
+
+        footer {
+            position: relative;
+            z-index: 1;
+            padding: 2rem 4rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            nav {
+                padding: 1rem 2rem;
+            }
+
+            .hero, section {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-image {
+                max-width: 350px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card.featured {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .contact-methods {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .education-timeline::before {
+                display: none;
+            }
+
+            .education-item {
+                padding-left: 0;
+            }
+
+            .education-item::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="three-canvas"></canvas>
+
+    <nav>
+        <a href="#" class="logo">ANGELIN</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">Business × Technology</span>
+            <h1>
+                <span>HOLY <span class="accent">ANGELIN</span> VIRSA IRWANTO</span>
+            </h1>
+            <p class="hero-description">
+                Business-trained and technically-driven, bridging insight with hands-on skills in network, cloud, and data visualisation. Combining business acumen with engineering execution to solve real-world challenges.
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">Scroll</div>
+    </section>
+
+    <section id="about">
+        <div class="section-header">
+            <h2 class="section-title">About Me</h2>
+            <span class="section-number">01</span>
+        </div>
+        <div class="about-content">
+            <div class="about-avatar">
+                👤
+            </div>
+            <div class="about-text">
+                <h3>A HYBRID PROFILE FOR REAL-WORLD CHALLENGES</h3>
+                <p>
+                    I'm a unique blend of business education and technical expertise. With a foundation in International Business from RMIT and currently pursuing Infocomm & Media Engineering at Nanyang Polytechnic, I bring a distinctive perspective to problem-solving.
+                </p>
+                <p>
+                    My journey spans from understanding global trade operations and macroeconomics to hands-on work with Linux systems, cloud infrastructure, and data visualisation. This combination allows me to bridge the gap between business strategy and technical implementation.
+                </p>
+                <p>
+                    Whether it's hardening Linux systems to meet CIS benchmarks or analysing data to drive business decisions, I approach every challenge with curiosity and dedication.
+                </p>
+                <div class="languages">
+                    <span class="language-item">🇬🇧 English – Proficient</span>
+                    <span class="language-item">🇮🇩 Bahasa Indonesia – Proficient</span>
+                    <span class="language-item">🇨🇳 Chinese – Spoken</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-header">
+            <h2 class="section-title">Technical Skills</h2>
+            <span class="section-number">02</span>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <div class="skill-category-icon">💻</div>
+                <h3>PROGRAMMING</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-icon">☁️</div>
+                <h3>CLOUD & INFRASTRUCTURE</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">VMWare</span>
+                    <span class="skill-tag">Linux</span>
+                    <span class="skill-tag">Cisco</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-icon">📊</div>
+                <h3>DATA & ANALYTICS</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">PowerBI</span>
+                    <span class="skill-tag">Data Visualisation</span>
+                    <span class="skill-tag">Data Analysis</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-icon">🔧</div>
+                <h3>HARDWARE & TOOLS</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Raspberry Pi</span>
+                    <span class="skill-tag">Arduino Uno</span>
+                    <span class="skill-tag">PyCharm</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-header">
+            <h2 class="section-title">Projects</h2>
+            <span class="section-number">03</span>
+        </div>
+        <div class="projects-grid">
+            <!-- Linux Hardening Project -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/Images/LinuxOSHardeningImage.png" alt="Linux OS Hardening" style="width: 100%; height: 100%; object-fit: cover;">
+                    <span class="project-badge">Showcase</span>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span class="project-tag">Linux</span>
+                        <span class="project-tag">Security</span>
+                        <span class="project-tag">CIS Benchmarks</span>
+                    </div>
+                    <h3 class="project-title">LINUX OS HARDENING</h3>
+                    <p class="project-description">Nanyang Polytechnic Semestral Project • 2025</p>
+                    <ul class="project-highlights">
+                        <li>Engineered a secure Linux environment implementing 7 core hardening techniques</li>
+                        <li>Configured automated updates, firewall rules, and intrusion detection systems</li>
+                        <li>Demonstrated expertise in PAM, SSH hardening, and system logging</li>
+                        <li>Achieved robust defense posture aligned with CIS benchmarks</li>
+                        <li>Top 2 in class – selected for End Semestral Showcase</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="assets/pdfs/CSEProjectSlides.pdf" class="btn btn-secondary btn-small" target="_blank">📄 View Slides</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Database Development Project -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/Images/DatabaseProjImage.png" alt="Database Development" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span class="project-tag">MySQL</span>
+                        <span class="project-tag">Database</span>
+                        <span class="project-tag">SQL</span>
+                    </div>
+                    <h3 class="project-title">DATABASE DEVELOPMENT</h3>
+                    <p class="project-description">MySQL Database Design & Implementation</p>
+                    <ul class="project-highlights">
+                        <li>Designed and developed relational database using MySQL</li>
+                        <li>Implemented data modeling and normalization techniques</li>
+                        <li>Created efficient queries for data retrieval and manipulation</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="assets/pdfs/DatabaseProject.pdf" class="btn btn-secondary btn-small" target="_blank">📄 View Report</a>
+                        <a href="assets/Project File/DatabaseProject/L5_team2.sql" class="btn btn-secondary btn-small" target="_blank">💾 View SQL</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Python Shopping System -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/Images/SupermarketProjectImage.png" alt="Online Supermarket System" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span class="project-tag">Python</span>
+                        <span class="project-tag">PyCharm</span>
+                        <span class="project-tag">Console App</span>
+                    </div>
+                    <h3 class="project-title">ONLINE SUPERMARKET SYSTEM</h3>
+                    <p class="project-description">Python Console Application</p>
+                    <ul class="project-highlights">
+                        <li>Built using Python in PyCharm IDE</li>
+                        <li>Simulates online supermarket shopping experience</li>
+                        <li>Generates formatted receipt with itemized purchases</li>
+                        <li>Implements shopping cart functionality and price calculations</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="assets/pdfs/SupermarketProjectReport.pdf" class="btn btn-secondary btn-small" target="_blank">📄 Report</a>
+                        <a href="assets/Project File/OnlineSupermarket/OnlineSupermarket.py" class="btn btn-secondary btn-small" target="_blank">🐍 View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HTML/CSS Canteen Website -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/Images/CanteenWebsiteImage.png" alt="Canteen Stall Website" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">CSS</span>
+                        <span class="project-tag">Web Design</span>
+                    </div>
+                    <h3 class="project-title">CANTEEN STALL WEBSITE</h3>
+                    <p class="project-description">Static Website Development</p>
+                    <ul class="project-highlights">
+                        <li>Designed and developed responsive website using HTML & CSS</li>
+                        <li>Created user-friendly interface for canteen stall</li>
+                        <li>Implemented modern web design principles</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="assets/Project File/C2_244876B_HolyAngelinVirsaIrwanto_FinalProject (1)/C2_244876B_HolyAngelinVirsaIrwanto_FinalProject/home_page.html" class="btn btn-secondary btn-small" target="_blank">🌐 View Site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Upcoming: Power BI -->
+            <div class="project-card">
+                <div class="project-image">
+                    <span class="project-image-icon">📈</span>
+                    <span class="project-badge upcoming">Upcoming</span>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span class="project-tag">Power BI</span>
+                        <span class="project-tag">Data Analysis</span>
+                        <span class="project-tag">Visualisation</span>
+                    </div>
+                    <h3 class="project-title">DATA ANALYSIS PROJECT</h3>
+                    <p class="project-description">Coming Soon</p>
+                    <ul class="project-highlights">
+                        <li>Data analysis and visualisation using Power BI</li>
+                        <li>Creating interactive dashboards and reports</li>
+                        <li>Deriving insights from complex datasets</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Upcoming: AWS Cloud -->
+            <div class="project-card">
+                <div class="project-image">
+                    <span class="project-image-icon">☁️</span>
+                    <span class="project-badge upcoming">Upcoming</span>
+                </div>
+                <div class="project-info">
+                    <div class="project-tags">
+                        <span class="project-tag">AWS</span>
+                        <span class="project-tag">Cloud</span>
+                        <span class="project-tag">Group Project</span>
+                    </div>
+                    <h3 class="project-title">AWS CLOUD PLATFORM</h3>
+                    <p class="project-description">Group Project • Coming Soon</p>
+                    <ul class="project-highlights">
+                        <li>Collaborative cloud infrastructure project</li>
+                        <li>Implementing AWS services and best practices</li>
+                        <li>Hands-on experience with cloud architecture</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="section-header">
+            <h2 class="section-title">Education</h2>
+            <span class="section-number">04</span>
+        </div>
+        <div class="education-timeline">
+            <div class="education-item">
+                <span class="education-year">2024 - 2027</span>
+                <h3 class="education-degree">DIPLOMA IN INFOCOMM & MEDIA ENGINEERING</h3>
+                <p class="education-school">Nanyang Polytechnic • Cloud Specialisation</p>
+                <p class="education-details">
+                    Notable: Effective Communication, Digital Electronics, Web Development, Database Fundamentals, Data Analysis & Visualisation
+                </p>
+            </div>
+            <div class="education-item">
+                <span class="education-year">2022 - 2023</span>
+                <h3 class="education-degree">BACHELOR'S IN INTERNATIONAL BUSINESS</h3>
+                <p class="education-school">RMIT - Singapore Institute of Management</p>
+                <p class="education-details">
+                    Notable: Political Economy of Global Business (Capstone), Global Trade Operations, Macroeconomics, Innovation Management
+                </p>
+            </div>
+            <div class="education-item">
+                <span class="education-year">2021 - 2022</span>
+                <h3 class="education-degree">DIPLOMA IN INTERNATIONAL BUSINESS</h3>
+                <p class="education-school">Singapore Institute of Management</p>
+                <p class="education-details">
+                    Notable: Business Statistics, International Relations, Business Law, Marketing, International HRM
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="section-header">
+            <h2 class="section-title">Get In Touch</h2>
+            <span class="section-number">05</span>
+        </div>
+        <div class="contact-content">
+            <h2>LET'S CONNECT</h2>
+            <p>I'm currently open to internship opportunities, collaborations, and exciting projects. Have something in mind? Let's talk.</p>
+            <div class="contact-methods">
+                <a href="mailto:irwantoangelin@gmail.com" class="contact-method">
+                    <span class="contact-method-icon">✉️</span>
+                    <span>irwantoangelin@gmail.com</span>
+                </a>
+                <a href="tel:+6590700556" class="contact-method">
+                    <span class="contact-method-icon">📱</span>
+                    <span>+65 9070 0556</span>
+                </a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/angelin-irwanto" target="_blank" class="social-link">
+                    <span style="font-size: 1.5rem;">💼</span>
+                    Connect on LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span>© 2025 Angelin Irwanto. All rights reserved.</span>
+        <span>Business × Technology</span>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        const canvas = document.getElementById('three-canvas');
+        const renderer = new THREE.WebGLRenderer({ 
+            canvas, 
+            antialias: true,
+            alpha: true 
+        });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+        const scene = new THREE.Scene();
+
+        const camera = new THREE.PerspectiveCamera(
+            75,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            1000
+        );
+        camera.position.z = 30;
+
+        const shapes = [];
+        const geometries = [
+            new THREE.IcosahedronGeometry(1, 0),
+            new THREE.OctahedronGeometry(1, 0),
+            new THREE.TetrahedronGeometry(1, 0),
+            new THREE.BoxGeometry(1, 1, 1),
+            new THREE.TorusGeometry(0.7, 0.3, 8, 24),
+            new THREE.DodecahedronGeometry(1, 0)
+        ];
+
+        const materialPrimary = new THREE.MeshBasicMaterial({
+            color: 0x6366f1,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.15
+        });
+
+        const materialSecondary = new THREE.MeshBasicMaterial({
+            color: 0xec4899,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.12
+        });
+
+        const materialDim = new THREE.MeshBasicMaterial({
+            color: 0x8a8a9a,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.06
+        });
+
+        for (let i = 0; i < 35; i++) {
+            const geometry = geometries[Math.floor(Math.random() * geometries.length)];
+            let mat;
+            const rand = Math.random();
+            if (rand > 0.7) mat = materialPrimary;
+            else if (rand > 0.5) mat = materialSecondary;
+            else mat = materialDim;
+            
+            const mesh = new THREE.Mesh(geometry, mat);
+            
+            mesh.position.x = (Math.random() - 0.5) * 70;
+            mesh.position.y = (Math.random() - 0.5) * 70;
+            mesh.position.z = (Math.random() - 0.5) * 50;
+            
+            const scale = Math.random() * 2.5 + 0.5;
+            mesh.scale.set(scale, scale, scale);
+            
+            mesh.rotation.x = Math.random() * Math.PI;
+            mesh.rotation.y = Math.random() * Math.PI;
+            
+            shapes.push({
+                mesh,
+                rotationSpeed: {
+                    x: (Math.random() - 0.5) * 0.008,
+                    y: (Math.random() - 0.5) * 0.008
+                },
+                floatSpeed: Math.random() * 0.4 + 0.3,
+                floatOffset: Math.random() * Math.PI * 2
+            });
+            
+            scene.add(mesh);
+        }
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let targetX = 0;
+        let targetY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+        });
+
+        const clock = new THREE.Clock();
+
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            const elapsedTime = clock.getElapsedTime();
+            
+            targetX += (mouseX * 2 - targetX) * 0.015;
+            targetY += (mouseY * 2 - targetY) * 0.015;
+            
+            camera.position.x = targetX * 4;
+            camera.position.y = targetY * 4;
+            camera.lookAt(scene.position);
+            
+            shapes.forEach((shape, i) => {
+                shape.mesh.rotation.x += shape.rotationSpeed.x;
+                shape.mesh.rotation.y += shape.rotationSpeed.y;
+                shape.mesh.position.y += Math.sin(elapsedTime * shape.floatSpeed + shape.floatOffset) * 0.002;
+            });
+            
+            renderer.render(scene, camera);
+        }
+
+        animate();
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            camera.position.z = 30 + scrollY * 0.008;
+        });
+    </script>
+</body>
+</html>
