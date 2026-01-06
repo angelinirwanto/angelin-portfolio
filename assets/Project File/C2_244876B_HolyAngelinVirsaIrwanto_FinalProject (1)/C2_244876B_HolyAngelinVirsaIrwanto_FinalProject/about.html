@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="stylesheet/styles.css">
+    <style>
+
+        body{
+            background-image: url(Images/bg2.jpg);
+            background-size: cover;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        main{
+            background-color: #fff9f2;
+            border: none;
+        }
+
+        
+        .about-banner {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(to top, rgb(0, 0, 0, 0.5) 50%, rgb(0, 0, 0, 0.5) 50%), url(Images/member.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-banner-content {
+            text-align: center;
+            color: #fff9f2;
+            padding: 0 2rem;
+            animation: fadeIn 1s ease-out;
+            
+        }
+
+        .about-banner h1 {
+            font-size: 5.5rem;
+            margin-bottom: 0;
+            text-shadow: 2px 2px 4px grey;
+        }
+
+        .about-banner p {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        .ourmission, .ourstory, .ourvision {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .ourmission img, .ourstory img, .ourvision img {
+            width: 450px;
+            height: 550px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .ourmission:hover img, .ourstory:hover img, .ourvision:hover img {
+            transform: scale(1.05);
+        }
+
+        .ourmission-text, .ourstory-text, .ourvision-text {
+            flex: 1;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .ourmission-text h1, .ourstory-text h1, .ourvision-text h1 {
+            font-size: 3rem;
+            color: #493222;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .ourmission-text h1::after, 
+        .ourstory-text h1::after, 
+        .ourvision-text h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: #496977;
+        }
+
+.ourmission-text p, .ourstory-text p, .ourvision-text p {
+    font-size: 1.8rem;
+    color: #333;
+    line-height: 1.6;
+}
+    </style>
+
+</head>
+<body>
+    <main>
+        <header>
+            <div class="header-image">
+                <img src="Images/westy2_brown-removebg-preview.png" height="150" width="150" alt="">
+            </div>
+            <div class="text-container">
+            <h1>Western Cuisine Excellence</h1>
+            <p>Delicious meals made fresh daily</p>
+            </div>
+            
+            
+        </header>
+
+        <nav>
+            <a href="home_page.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="order.html">Order</a>
+            <a href="about.html">About Us</a>
+            <a href="register.html">Become a Member</a>
+        </nav>
+
+        <section class="about-banner">
+            <section class="about-banner-content">
+                <h1>About Us</h1>
+                <p>Where Culinary Dreams Become Delicious Reality</p>
+            </section>
+        </section>
+
+        <section class="ourmission">
+            <div>
+                <img src="Images/mission-removebg-preview.png" alt="">
+            </div>
+            <div class="ourmission-text">
+                <h1>OUR MISSION</h1>
+                <p>To provide affordable, nutritious, and flavorful dining options for the NYP community
+                </p>
+            </div>
+        </section>
+
+        <section class="ourstory">
+            <div class="ourstory-text">
+                <h1>OUR STORY</h1>
+                <p>Meet Lin Wei Ting, a 2022 graduate of NYP's Diploma in Culinary Arts, whose dream of serving exceptional Western cuisine began within the very walls where she once studied.
+                </p>
+                <p>During her final year, Wei Ting would spend countless hours in the culinary labs, experimenting with flavors, perfecting her techniques, and dreaming of the day she could share her culinary vision with the world. While many of her classmates looked to external restaurants and hotels for their first professional opportunity, Wei Ting saw potential in the most familiar place, the NYP canteen itself.
+                </p>
+            </div>
+            <div>
+                <img src="Images/manager.jpg" alt="">
+            </div>
+        </section>
+
+        <section class="ourvision">
+            <div>
+                <img src="Images/vision-removebg-preview.png" alt="">
+            </div>
+            <div class="ourvision-text">
+                <h1>OUR VISION</h1>
+                <p>To revolutionize campus dining by proving that quick, affordable meals can be crafted with professional techniques, premium ingredients, and genuine passion. We envision a dining experience that transforms ordinary meals into extraordinary culinary moments, inspiring students and staff alike to appreciate the art of Western cuisine.
+                </p>
+            </div>
+        </section>
+
+
+        <section class="contact">
+            <h2 class="section-title">Find Us</h2>
+            <div class="contact-info">
+                <div class="location">
+                    <h3>Location</h3>
+                    <p>Koufu Food Court</p>
+                    <p>Nanyang Polytechnic</p>
+                    <p>180 Ang Mo Kio Avenue 8</p>
+                    <p>Singapore 569830</p>
+                    <p><a href="https://maps.app.goo.gl/f1tavhtFt8kY3Dp88">Locate Us</a></p>
+                </div>
+                <div class="contact-details">
+                    <h3>Contact Us</h3>
+                    <p>Phone: +65 9863 8123</p>
+                    <p>Email: western@koufu.nyp.edu.sg</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <h4>&copy; 2025 Western Stall @ Koufu. All rights reserved.</h4> 
+        </footer>
+
+    </main>
+</body>
+</html>

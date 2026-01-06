@@ -1,0 +1,142 @@
+*{ margin: 0; padding: 0;}
+
+main {
+    padding: 0px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #493222;
+    line-height: 1.6;
+    width: 1266px; /* Page width */
+    margin: 0 auto; /* Centers the page horizontally */
+    padding: 0; /* Optional: ensures no extra padding */
+}
+
+header {
+    height: 150px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 20px;
+ 
+    top: 0;
+    left: 0;
+    background-color: #fff9f2;
+    color: #493222;
+    z-index: 1000;
+
+}
+
+header p{
+    color: #ac6532;
+}
+
+header div {
+    display: flex;
+    align-items: center
+}
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    margin-left: 15px;
+    width: auto;
+}
+
+.text-container h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 75px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    line-height: 1;
+}
+
+.text-container p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 5px;
+    margin-top: 0;
+    line-height: 1.2;
+
+}
+
+nav {
+    background-color:#496977;
+    height: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 20px;
+    font-size: 20px;
+    width: 100%;
+}
+
+a {
+    color: #fff9f2;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+nav a:hover {
+    color: #65a7c8;
+    transform: translateY(-2px);
+}
+
+.section-title{
+    text-decoration: underline;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.contact{
+    border-top: #493222 dotted thin;
+    padding-top: 3rem;
+}
+
+.contact-info{
+    display: flex;
+    justify-content:space-around;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    
+}
+
+.contact-info h3{
+    font-size: 1.5rem;
+}
+
+
+footer {
+    padding-top: 2rem;
+    text-align: center;
+}
+
+
+
+
+.intro {
+    text-align: center;
+}
+
+.location p{
+    margin-bottom: 2px;
+}
+
+.location a{
+    color: #493222;
+    border: solid #493222 thin;
+    padding: 5px;
+}
+
+.location a:hover{
+    background-color: #ac6532;
+    color: #fff9f2;
+}
+

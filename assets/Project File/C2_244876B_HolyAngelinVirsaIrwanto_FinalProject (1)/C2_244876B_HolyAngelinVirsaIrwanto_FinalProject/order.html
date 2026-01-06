@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <link rel="stylesheet" href="stylesheet/styles.css">
+    <style>
+        body{
+            background-image: url(Images/bg2.jpg);
+            background-size: cover;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        main{
+            background-color: #fff9f2;
+            border: none;
+        }
+
+        .order-banner {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(to top, rgb(0, 0, 0, 0.5) 50%, rgb(0, 0, 0, 0.5) 50%), url(Images/menu/banner.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+        }
+        .order-banner-content {
+            text-align: center;
+            color: #fff9f2;
+            padding: 0 2rem;
+            animation: fadeIn 1s ease-out;
+            
+        }
+        .order-banner h1 {
+            font-size: 7rem;
+            margin-bottom: 0;
+            margin-left: 5rem;
+          
+        }
+
+
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        fieldset{
+            border: none;
+            width: 100%;
+            max-width: 600px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            margin-bottom: 10px;
+        }
+
+        legend{
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #493222;
+            text-align: center;
+            width: 100%;
+            padding-bottom: 1rem;
+    
+        }
+
+       
+        label {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            color: #493222;
+            font-weight: 600;
+        }
+        
+
+        .form {
+            display: flex;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        select{
+            font-size: 1.5rem;
+            padding: 0.75rem;
+            width: 100%;
+            max-width: 400px;
+            border: 2px solid #ced6da;
+            border-radius: 10px;
+            background-color: #f9f5f2;
+            transition: all 0.3s ease;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #496977;
+            box-shadow: 0 0 0 3px rgba(73, 105, 119, 0.2);
+        }
+
+        .submit-button{
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            padding: 12px 24px;
+            font-size: 1.6rem;
+            font-weight: bold;
+            background-color: #ced6da;
+            color: #493222;
+            border: none;
+            transition: all 0.1s ease;
+            cursor: pointer;
+        }
+
+        .submit-button:hover{
+            transform: translateY(-2px);
+            background-color: #496977;
+            color: #fff9f2;
+        }
+
+        .form textarea {
+            font-size: 1.5rem;
+            padding: 0.75rem;
+            width: 100%;
+            max-width: 400px;
+            border: 2px solid #ced6da;
+            border-radius: 10px;
+            background-color: #f9f5f2;
+     
+            min-height: 100px;
+            transition: all 0.3s ease;
+        }
+
+        .form textarea:focus {
+            outline: none;
+            border-color: #496977;
+            box-shadow: 0 0 0 3px rgba(73, 105, 119, 0.2);
+        }
+
+        .form input[type="text"] {
+            font-size: 1.5rem;
+            padding: 0.75rem;
+            width: 100%;
+            max-width: 400px;
+            border: 2px solid #ced6da;
+            border-radius: 10px;
+            background-color: #f9f5f2;
+            transition: all 0.3s ease;
+        }
+
+        .form input[type="text"]:focus {
+            outline: none;
+            border-color: #496977;
+            box-shadow: 0 0 0 3px rgba(73, 105, 119, 0.2);
+        }
+
+        
+    </style>
+
+</head>
+<body>
+    <main>
+        <header>
+            <div class="header-image">
+                <img src="Images/westy2_brown-removebg-preview.png" height="150" width="150" alt="">
+            </div>
+            <div class="text-container">
+            <h1>Western Cuisine Excellence</h1>
+            <p>Delicious meals made fresh daily</p>
+            </div>
+            
+            
+        </header>
+
+        <nav>
+            <a href="home_page.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="order.html">Order</a>
+            <a href="about.html">About Us</a>
+            <a href="register.html">Become a Member</a>
+        </nav>
+
+        <section class="order-banner">
+            <section class="order-banner-content">
+                <h1>Order</h1>
+            </section>
+        </section>
+
+        <form method="get" action="http://jkorpela.fi/cgi-bin/echo.cgi">
+            <fieldset>
+                <legend>Order Inputs</legend>
+                <div class="form">
+                    <label for="mymaindish">Pick Your Main Dish</label>
+                    <select name="mainDish" id="mymaindish">
+                        <option value="grilledfish">Grilled Fish</option>
+                        <option value="hawaiichicken">Hawaiian Chicken Chop</option>
+                        <option value="mexicanchicken">Mexican Chicken Chop</option>
+                        <option value="chickennacho">Chicken Cutlet with Nacho Cheese</option>
+                        <option value="beefsteak">Beef Steak</option>
+                        <option value="mixedgrill">Mixed Grill</option>
+                        <option value="none">None</option>
+                    </select>
+                </div>
+        
+                <div class="form">
+                    <label for="mysidedish1">Pick Your 1st Side Dish</label>
+                    <select name="sideDish" id="mysidedish1">
+                        <option value="spaghetti">Spaghetti</option>
+                        <option value="butterrice">Butter Rice</option>
+                        <option value="frenchfries">French Fries</option>
+                        <option value="bakedbeans">Baked Beans</option>
+                        <option value="broccolicarrots">Broccoli and Carrots</option>
+                        <option value="mashedpotatoes">Mashed Potatoes</option>
+                        <option value="mushroomsoup">Mushroom Soup</option>
+                        <option value="brownie">Brownie</option>
+                        <option value="none">None</option>
+                    </select>
+                </div>
+        
+                <div class="form">
+                    <label for="mysidedish2">Pick Your 2nd Side Dish</label>
+                    <select name="sideDish" id="mysidedish2">
+                        <option value="spaghetti">Spaghetti</option>
+                        <option value="butterrice">Butter Rice</option>
+                        <option value="frenchfries">French Fries</option>
+                        <option value="bakedbeans">Baked Beans</option>
+                        <option value="broccolicarrots">Broccoli and Carrots</option>
+                        <option value="mashedpotatoes">Mashed Potatoes</option>
+                        <option value="mushroomsoup">Mushroom Soup</option>
+                        <option value="brownie">Brownie</option>
+                        <option value="none">None</option>
+                    </select>
+                </div>
+        
+                <div class="form">
+                    <label for="quantity">Quantity</label>
+                    <input type="text" id="quantity" name="quantity" maxlength="2" pattern="[0-9]+" placeholder="Please Enter Numbers Only" required>
+                </div>
+        
+                <div class="form">
+                    <label for="extras">Dietary Restrictions / Special Requests</label>
+                    <textarea name="Extras" id="extras"></textarea>
+                </div>
+        
+                <div>
+                    <input class="submit-button" type="submit">
+                </div>
+            </fieldset>
+        </form>
+        
+        <section class="contact">
+            <h2 class="section-title">Find Us</h2>
+            <div class="contact-info">
+                <div class="location">
+                    <h3>Location</h3>
+                    <p>Koufu Food Court</p>
+                    <p>Nanyang Polytechnic</p>
+                    <p>180 Ang Mo Kio Avenue 8</p>
+                    <p>Singapore 569830</p>
+                    <p><a href="https://maps.app.goo.gl/f1tavhtFt8kY3Dp88">Locate Us</a></p>
+                </div>
+                <div class="contact-details">
+                    <h3>Contact Us</h3>
+                    <p>Phone: +65 9863 8123</p>
+                    <p>Email: western@koufu.nyp.edu.sg</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <h4>&copy; 2025 Western Stall @ Koufu. All rights reserved.</h4> 
+        </footer>
+
+    </main>
+</body>
+</html>

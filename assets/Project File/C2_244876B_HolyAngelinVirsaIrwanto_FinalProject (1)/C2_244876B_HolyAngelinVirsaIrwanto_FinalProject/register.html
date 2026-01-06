@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up / Log In</title>
+    <link rel="stylesheet" href="stylesheet/styles.css">
+    <style>
+
+        body{
+            background-image: url(Images/bg2.jpg);
+            background-size: cover;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        main{
+            background-color: #fff9f2;
+            border: none;
+        }
+
+        .register-banner {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(to top, rgb(0, 0, 0, 0.5) 50%, rgb(0, 0, 0, 0.5) 50%), url(Images/member.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .register-banner-content {
+            text-align: center;
+            color: #fff9f2;
+            padding: 0 2rem;
+            animation: fadeIn 1s ease-out;
+            
+        }
+
+        .register-banner h1 {
+            font-size: 5.5rem;
+            margin-bottom: 0;
+            text-shadow: 2px 2px 4px grey;
+        }
+
+        .register-banner p {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+  
+        fieldset {
+            border: none;
+            width: 100%;
+            max-width: 600px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 2rem;
+           
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        legend {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #493222;
+            text-align: center;
+            width: 100%;
+            padding-bottom: 1.5rem;
+        }
+        
+        label {
+            width: 100%;
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+            color: #493222;
+            font-weight: 600;
+            text-align: left;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+
+        }
+
+        .form{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+
+        input[type="text"],
+        input[type="email"], 
+        input[type="password"],
+        input[type="date"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.75rem;
+            font-size: 1.5rem;
+            border: 2px solid #ced6da;
+            border-radius: 10px;
+            background-color: #f9f5f2;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus, 
+        input[type="password"]:focus,
+        input[type="date"]:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #496977;
+            box-shadow: 0 0 0 3px rgba(73, 105, 119, 0.2);
+        }
+
+
+
+        .submit-button {
+            margin-top: 1.5rem;
+            border-radius: 10px;
+            padding: 12px 24px;
+            font-size: 1.6rem;
+            font-weight: bold;
+            background-color: #ced6da;
+            color: #493222;
+            border: none;
+            transition: all 0.1s ease;
+            cursor: pointer;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            background-color: #496977;
+            color: #fff9f2;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .gender{
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+
+        .gender-container {
+            display: flex;
+            justify-content: flex-start;
+            font-size: 1.5rem;
+            gap: 20px;
+            align-items: center;
+            width: 100%;
+        }
+        
+
+
+    </style>
+
+</head>
+<body>
+    <main>
+        <header>
+            <div class="header-image">
+                <img src="Images/westy2_brown-removebg-preview.png" height="150" width="150" alt="">
+            </div>
+            <div class="text-container">
+            <h1>Western Cuisine Excellence</h1>
+            <p>Delicious meals made fresh daily</p>
+            </div>
+            
+            
+        </header>
+
+        <nav>
+            <a href="home_page.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="order.html">Order</a>
+            <a href="about.html">About Us</a>
+            <a href="register.html">Become a Member</a>
+        </nav>
+
+        <section class="register-banner">
+            <div class="register-banner-content">
+                <h1>Membership</h1>
+                <p>Join our family today!</p>
+            </div>
+        </section>
+
+                 
+        <form method="get" action="http://jkorpela.fi/cgi-bin/echo.cgi">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="form">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" required>
+                </div>
+        
+                <div class="form">
+                    <label>Gender:</label>
+                    <div class="gender-container" id="genderRadioGroup">
+                        <input class="gender" type="radio" id="male" name="mygender" value="M">
+                        <label for="male">Male</label>
+                        <input class="gender" type="radio" id="female" name="mygender" value="F">
+                        <label for="female">Female</label>
+                    </div>
+                </div>
+        
+                <div class="form">
+                    <label for="telephone">Telephone Number:</label>
+                    <input type="text" id="telephone" name="mymobile" pattern="[98]{1}[0-9]{7}" required>
+                </div>
+        
+                <div class="form">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="mydob" required>
+                </div>
+        
+                <div class="form">
+                    <label for="race">Race:</label>
+                    <select name="race" id="race">
+                        <option value="C">Chinese</option>
+                        <option value="M">Malay</option>
+                        <option value="I">Indian</option>
+                        <option value="O">Others</option>
+                    </select>
+                </div>
+        
+                <div class="form">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="myemail" required>
+                </div>
+        
+                <div class="form">
+                    <label for="address">Address:</label>
+                    <textarea id="address" name="myaddress" rows="3" cols="50" required></textarea>
+                </div>
+            </fieldset>
+        
+            <fieldset>
+                <legend>Account Information</legend>
+                <div class="form">
+                    <label for="userid">User ID:</label>
+                    <input type="text" id="userid" minlength="4" required>
+                </div>
+        
+                <div class="form">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" minlength="16" name="mypassword" placeholder="Please enter a minimum of 16 digits" required>
+                </div>
+        
+                <div class="form">
+                    <label for="confirmpassword">Confirm Password:</label>
+                    <input type="password" id="confirmpassword" minlength="16" name="mypassword" placeholder="Please enter a minimum of 16 digits" required>
+                </div>
+        
+                <div class="form">
+                    <label for="favouritefood">Favourite Food</label>
+                    <textarea id="favouritefood" name="myfavouritefood" placeholder="Optional"></textarea>
+                </div>
+        
+                <div>
+                    <input class="submit-button" type="submit">
+                </div>
+            </fieldset>
+        </form>
+
+        <section class="contact">
+            <h2 class="section-title">Find Us</h2>
+            <div class="contact-info">
+                <div class="location">
+                    <h3>Location</h3>
+                    <p>Koufu Food Court</p>
+                    <p>Nanyang Polytechnic</p>
+                    <p>180 Ang Mo Kio Avenue 8</p>
+                    <p>Singapore 569830</p>
+                    <p><a href="https://maps.app.goo.gl/f1tavhtFt8kY3Dp88">Locate Us</a></p>
+                </div>
+                <div class="contact-details">
+                    <h3>Contact Us</h3>
+                    <p>Phone: +65 9863 8123</p>
+                    <p>Email: western@koufu.nyp.edu.sg</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <h4>&copy; 2025 Western Stall @ Koufu. All rights reserved.</h4> 
+        </footer>
+    </main>
+    
+</body>
+</html>

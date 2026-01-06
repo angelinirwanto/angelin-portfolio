@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mains</title>
+    <link rel="stylesheet" href="stylesheet/styles.css">
+    <style>
+        body{
+            background-image: url(Images/bg2.jpg);
+            background-size: cover;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        main{
+            background-color: #fff9f2;
+            border: none;
+        }
+        .menu-banner {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(to top, rgb(0, 0, 0, 0.5) 50%, rgb(0, 0, 0, 0.5) 50%), url(Images/menu/banner.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            margin-bottom: 2rem;
+        }
+        .menu-banner-content {
+            text-align: center;
+            color: #fff9f2;
+            padding: 0 2rem;
+            animation: fadeIn 1s ease-out;
+            
+        }
+        .menu-banner h1 {
+            font-size: 7rem;
+            margin-bottom: 0;
+            margin-left: 5rem;
+          
+        }
+        .menu-rows{
+            display: flex;
+            justify-content: space-around;
+            width: auto;
+            height: auto;
+        }
+        .mains-dishes{
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: auto;
+            border-radius: 10px;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.549);
+            margin: 10px;
+        }
+
+        .mains-desc {
+            flex: 3;
+            
+        }
+
+        .mains-desc h2{
+            font-size: 2rem;
+        }
+
+        .mains-desc .price{
+            font-size: 1.8rem;
+        }
+
+        .mains-desc p{
+           font-size: 1.5rem;
+           margin-bottom: 5px;
+        }
+
+        .mains-img {
+          
+            flex: 1;
+        }
+
+        .mains-img img{
+            border-radius: 5px;
+            width: auto;
+            height: auto;
+        }
+
+        .menu-button{
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #ced6da;
+            color: #496977;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.05s, background-color0.3s;
+            margin: 2rem 0;
+            font-size: 20px;
+        }
+
+        .menu-button a{
+            font-weight: bolder;
+            color: #493222;
+            
+        }
+
+        .menu-button:hover {
+            transform: translateY(-2px);
+            background-color: #496977;
+        }
+
+        .menu-button:hover  a{
+            color: #fff9f2;
+        }
+
+    </style>
+
+</head>
+<body>
+    <main>
+        <header>
+            <div class="header-image">
+                <img src="Images/westy2_brown-removebg-preview.png" height="150" width="150" alt="">
+            </div>
+            <div class="text-container">
+            <h1>Western Cuisine Excellence</h1>
+            <p>Delicious meals made fresh daily</p>
+            </div>
+        </header>
+
+        <nav>
+            <a href="home_page.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="order.html">Order</a>
+            <a href="about.html">About Us</a>
+            <a href="register.html">Become a Member</a>
+        </nav>
+
+        <section class="menu">
+
+            <div class="mains">
+                <section class="menu-banner">
+                    <section class="menu-banner-content">
+                        <h1>Mains</h1>
+                    </section>
+                </section>
+
+            <div class="menu-rows">
+                <div class="mains-dishes">
+                    <div class="mains-desc">
+                        <h2>Grilled Fish</h2>
+                        <p class="price">$7.30</p>
+                        <p>Seasonal fresh grilled fish fillet with homemade sauce.</p>
+                    </div>
+                    <div class="mains-img">
+                        <img src="Images/menu/grilledfish.jpg" alt="Grilled Fish">
+                    </div>
+                    <div class="menu-button">
+                        <a href="order.html">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="mains-dishes">
+                    <div class="mains-desc">
+                        <h2>Hawaiian Chicken Chop</h2>
+                        <p class="price">$7.30</p>
+                        <p>Grilled chicken marinated in pineapple and soy sauce.</p>
+                    </div>
+                    <div class="mains-img">
+                        <img src="Images/menu/hawaiichicken.jpg" alt="Hawaiian Chicken Chop">
+                    </div>
+                    <div class="menu-button">
+                        <a href="order.html">Order Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-rows">
+                <div class="mains-dishes">
+                    <div class="mains-desc">
+                        <h2>Mexican Chicken Chop</h2>
+                        <p class="price">$7.30</p>
+                        <p>Freshly grilled chcicken with black pepper sauce and nacho cheese. </p>
+                    </div>
+                    <div class="mains-img">
+                        <img src="Images/menu/mexicanchicken.jpg" alt="Mexican Chicken Chop">
+                    </div>
+                    <div class="menu-button">
+                        <a href="order.html">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="mains-dishes">
+                    <div class="mains-desc">
+                        <h2>Classic Chicken Chop</h2>
+                        <p class="price">$6.30</p>
+                        <p>Tender & Flacourful cut of meat that is grilled to perfection with the classic brown sauce.</p>
+                    </div>
+                    <div class="mains-img">
+                        <img src="Images/menu/chickenchop.jpg" alt="Classic Chicken Chop">
+                    </div>
+                    <div class="menu-button">
+                        <a href="order.html">Order Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-rows">
+                <div class="mains-dishes">
+                    <div class="mains-desc">
+                        <h2>Chicken Cutlet with Nacho Cheese</h2>
+                        <p class="price">$6.90</p>
+                        <p>Crispy chicken cutlet with gooey nacho cheese drizzled on top.</p>
+                    </div>
+                    <div class="mains-img">
+                        <img src="Images/menu/chickennacho.jpg" alt="Chicken Cutlet with Nacho Cheese">
+                    </div>
+                    <div class="menu-button">
+                        <a href="order.html">Order Now</a>
+                    </div>
+                </div>
+
+                <div class="mains-dishes">
+                    <div class="mains-desc">
+                        <h2>Beef Steak</h2>
+                        <p class="price">$7.80</p>
+                        <p>Flavourful, tender and high quality meat. Cooked to perfection.</p>
+                    </div>
+                    <div class="mains-img">
+                        <img src="Images/menu/beefsteak.jpg" alt="Beef Steak">
+                    </div>
+                    <div class="menu-button">
+                        <a href="order.html">Order Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-rows">
+                <div class="mains-dishes">
+                    <div class="mains-desc">
+                        <h2>Mixed Grill</h2>
+                        <p class="price">$9.30</p>
+                        <p>Deliciously cooked set of meats. Dish comes with beef, chicken, ham and sausage.</p>
+                    </div>
+                    <div class="mains-img">
+                        <img src="Images/menu/mixedgrill.jpg" alt="Mixed Grill">
+                    </div>
+                    <div class="menu-button">
+                        <a href="order.html">Order Now</a>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+
+        </section>
+
+        <section class="contact">
+            <h2 class="section-title">Find Us</h2>
+            <div class="contact-info">
+                <div class="location">
+                    <h3>Location</h3>
+                    <p>Koufu Food Court</p>
+                    <p>Nanyang Polytechnic</p>
+                    <p>180 Ang Mo Kio Avenue 8</p>
+                    <p>Singapore 569830</p>
+                    <p><a href="https://maps.app.goo.gl/f1tavhtFt8kY3Dp88">Locate Us</a></p>
+                </div>
+                <div class="contact-details">
+                    <h3>Contact Us</h3>
+                    <p>Phone: +65 9863 8123</p>
+                    <p>Email: western@koufu.nyp.edu.sg</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <h4>&copy; 2025 Western Stall @ Koufu. All rights reserved.</h4> 
+        </footer>
+
+    </main>
+</body>
+</html>

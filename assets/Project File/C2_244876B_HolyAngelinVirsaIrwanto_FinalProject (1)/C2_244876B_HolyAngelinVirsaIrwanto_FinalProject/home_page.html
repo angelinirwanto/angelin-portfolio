@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="stylesheet/styles.css">
+    <style>
+
+        body{
+            background-image: url(Images/bg2.jpg);
+            background-size: cover;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        main{
+            background-color: #fff9f2;
+            border: none;
+        }
+
+        
+        .banner {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            background: linear-gradient(to top, rgb(0, 0, 0, 0.5) 50%, rgb(0, 0, 0, 0.5) 50%), url(Images/home/westerncuisine.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .banner-content {
+            text-align: center;
+            color: #fff9f2;
+            padding: 0 2rem;
+            animation: fadeIn 1s ease-out;
+            
+        }
+
+        .banner h1 {
+            font-size: 5.5rem;
+            margin-bottom: 0;
+        }
+
+        .banner p {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            font-weight: bold;
+        }
+
+        .banner-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #fff9f2;
+            color: #496977;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.05s, background-color 0.05s;
+
+        }
+
+        .banner-button:hover {
+            transform: translateY(-2px);
+            background-color: #ac6532;
+            color: #fff9f2;
+        }
+
+        .intro-title {
+            padding-top: 20px;
+            font-size: 3rem;
+        }
+
+        .description {
+            font-size: 1.7rem;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .homeFood {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 1rem;
+        }
+
+        .feature-card{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card img {
+            width: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card p{
+            display: block;
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, #ced6da 0%, #ced6da 100% );
+            color: #493222;
+            padding: 2rem 2rem;
+            margin: 3rem 2rem;
+            border-radius: 3rem;
+            text-align: center;
+        }
+
+        .testimonial h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial p {
+            font-size: 1.7rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial cite {
+            font-size: 1.5rem;
+        }
+
+        .promotions {
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            margin: 3rem 0;
+        }
+
+        .promotion-title {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .promotion-subtitle {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .promotion-items {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            align-items: center;
+            margin: auto auto;
+            gap: 1rem;
+   
+        }
+
+        .promo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1rem;
+    
+        }
+
+        .promo-item img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .promo-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .promo-item h3 {
+            margin-top: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .promo-item .price {
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .promo-item .ori-price {
+            color: red;
+            text-decoration: line-through;
+            font-size: 1rem;
+        }
+    
+
+
+
+
+    </style>
+
+</head>
+<body>
+    <main>
+        <header>
+            <div class="header-image">
+                <img src="Images/westy2_brown-removebg-preview.png" height="150" width="150" alt="">
+            </div>
+            <div class="text-container">
+            <h1>Western Cuisine Excellence</h1>
+            <p>Delicious meals made fresh daily</p>
+            </div>
+            
+            
+        </header>
+
+        <nav>
+            <a href="home_page.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="order.html">Order</a>
+            <a href="about.html">About Us</a>
+            <a href="register.html">Become a Member</a>
+        </nav>
+
+        <section class="banner">
+            <section class="banner-content">
+                <h1>Exquisite Food</h1>
+                <p>Discover our mouth-watering dishes made fresh daily at NYP</p>
+                <a href="menu.html" class="banner-button">View Our Menu</a>
+            </section>
+        </section>
+
+        <section class="intro">
+            <h1 class="intro-title">What We Offer</h1>
+            <p class="description">Located at the Koufu food court of Nanyang Polytechnic, our stall is the exclusive spot for grilled Western cuisine. Our menu features a delicious selection of grilled meats and hearty pastas, each prepared with care using fresh ingredients. We pride ourselves on quick service and high-quality food, ensuring a satisfying dining experience for Nanyang Polytechnic students and staff. Whether you're in for a quick lunch or a relaxing dinner, we promise a delightful meal that will make you want to come back for more.</p>
+        
+
+            <div class="homeFood">
+                <div class="feature-card">
+                    <img src="Images/home/fresh-removebg-preview.png" alt="">
+                    <p>We us eonly the freshest ingredients daily to ensure quality in every dish we serve.</p>
+                </div>
+                <div class="feature-card">
+                    <img src="Images/home/fast-removebg-preview.png" alt="fast service">
+                    <p>Get your food within 10 minutes - perfect for your lunch break!</p>
+                </div>
+                <div class="feature-card">
+                    <img src="Images/home/discount-removebg-preview.png" alt="discount">
+                    <p>Special prices and combos for NYP students.</p>
+                </div>
+            </div> <br>
+        </section>
+
+        <section class="testimonial">
+            <h2>What Our Customers Say</h2>
+            <p>"The best western food in NYP! Quick service and great value for money. The grilled chicken is my favorite!"</p>
+            <cite>- Sarah, Year 2 Student</cite>
+        </section>
+
+        <section class="promotions">
+            <h2 class="promotion-title">Special Promotion!</h2>
+            <p class="promotion-subtitle">Complete your meal with these at a fraction of its usual price!</p> <br>
+        
+            <div class="promotion-items">
+                <div class="promo-item">
+                    <a href="order.html" title="Order Now"><img src="Images/home/fried-egg-removebg-preview.png" alt="fried-egg" ></a>
+                    <h3>Fried Egg</h3>
+                    <p class="price">$0.60</p>
+                    <p class="ori-price">U.P. $1.20</p>
+                </div>
+                <div class="promo-item">
+                    <a href="order.html" title="Order Now"><img src="Images/home/mushroom.png" alt="mushroom-soup"></a>
+                    <h3>Mushroom Soup</h3>
+                    <p class="price">$1.00</p>
+                    <p class="ori-price">U.P. $2.00</p>
+                </div>
+                <div class="promo-item">
+                    <a href="order.html" title="Order Now"><img src="Images/home/french-fries-removebg-preview.png" alt="french-fries"></a>
+                    <h3>Side Dishes</h3>
+                    <p class="price">$1.00</p>
+                    <p class="ori-price">U.P. $2.00</p>
+                </div>
+                <div class="promo-item">
+                    <a href="order.html" title="Order Now"><img src="Images/home/brownies-removebg-preview.png" alt="brownies"></a>
+                    <h3>Brownie</h3>
+                    <p class="price">$2.00</p>
+                    <p class="ori-price">U.P. $4.00</p>
+                </div>
+            </div>
+        </section>
+        <section style="text-align: center;">
+            <a href="order.html" class="cta-button">Order Now</a>
+        </section>
+
+        
+
+        <section class="contact">
+            <h2 class="section-title">Find Us</h2>
+            <div class="contact-info">
+                <div class="location">
+                    <h3>Location</h3>
+                    <p>Koufu Food Court</p>
+                    <p>Nanyang Polytechnic</p>
+                    <p>180 Ang Mo Kio Avenue 8</p>
+                    <p>Singapore 569830</p>
+                    <p><a href="https://maps.app.goo.gl/f1tavhtFt8kY3Dp88">Locate Us</a></p>
+                </div>
+                <div class="contact-details">
+                    <h3>Contact Us</h3>
+                    <p>Phone: +65 9863 8123</p>
+                    <p>Email: western@koufu.nyp.edu.sg</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+        <h4>&copy; 2025 Western Stall @ Koufu. All rights reserved.</h4> 
+        </footer>
+    </main>
+</body>
+</html>

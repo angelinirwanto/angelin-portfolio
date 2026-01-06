@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Menu</title>
+    <link rel="stylesheet" href="stylesheet/styles.css">
+    <style>
+        body{
+            background-image: url(Images/bg2.jpg);
+            background-size: cover;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        main{
+            background-color: #fff9f2;
+            border: none;
+        }
+        .menu-banner {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background: linear-gradient(to top, rgb(0, 0, 0, 0.5) 50%, rgb(0, 0, 0, 0.5) 50%), url(Images/menu/banner.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+        }
+        .menu-banner-content {
+            text-align: center;
+            color: #fff9f2;
+            padding: 0 2rem;
+            animation: fadeIn 1s ease-out;
+            
+        }
+        .menu-banner h1 {
+            font-size: 7rem;
+            margin-bottom: 0;
+            margin-left: 5rem;
+          
+        }
+
+        .mains-menu{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+            height: auto;
+            padding-top: 2rem;
+            margin-left: 1rem;
+          
+        }
+
+        .mains-text{
+            flex: 2;
+            margin-left: 20px;
+            margin-right: 25px;
+        }
+        
+        .mains-text h1{
+            font-size: 3rem;
+            padding-top: 4rem;
+        }
+
+        .mains-text h3{
+            padding-top: 2.6rem;
+            font-size: 1.7rem;
+            padding-bottom: 2.6rem;
+        }
+
+        .mains-text p{
+            font-size: 1.5rem;
+            padding-bottom: 2.6rem;
+        }
+
+        .mains-poster{
+            flex: 2;
+        }
+
+        .mains-poster img {
+            width: 100%;
+        }
+
+        .sides-menu{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding-top: 3rem;
+            width: 100%;
+            height: auto;
+        }
+
+        .sides-text {
+            flex: 2;
+            margin-left: 20px;
+            margin-right: 25px;
+        }
+
+        .sides-text h1{
+            font-size: 3rem;
+            padding-top: 5rem;
+        }
+
+        .sides-text h3{
+            padding-top: 2.6rem;
+            font-size: 1.7rem;
+            padding-bottom: 2.6rem;
+        }
+
+        .sides-text p{
+            font-size: 1.5rem;
+            padding-bottom: 2.6rem;
+        }
+
+        .sides-poster{
+            flex: 2;
+            margin-right: 1rem;
+        }
+        
+        .sides-poster img{
+            width: 100%;
+ 
+        }
+
+        .menu-button {
+            color: #493222;
+            border: 1px solid #493222;
+            padding: 1rem;
+        }
+
+        .menu-button:hover{
+            background-color: #493222;
+            color: #fff9f2;
+         
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <main>
+        <header>
+            <div class="header-image">
+                <img src="Images/westy2_brown-removebg-preview.png" height="150" width="150" alt="">
+            </div>
+            <div class="text-container">
+            <h1>Western Cuisine Excellence</h1>
+            <p>Delicious meals made fresh daily</p>
+            </div>
+            
+            
+        </header>
+
+        <nav>
+            <a href="home_page.html">Home</a>
+            <a href="menu.html">Menu</a>
+            <a href="order.html">Order</a>
+            <a href="about.html">About Us</a>
+            <a href="register.html">Become a Member</a>
+        </nav>
+
+        <section class="menu-banner">
+            <section class="menu-banner-content">
+                <h1>Menu</h1>
+            </section>
+        </section>
+
+        <section class="mains-menu">
+           
+            <div class="mains-poster">
+                <img src="Images/menu/mains.jpg" alt="">
+            </div>
+            <div class="mains-text">
+                <h1>COME, SIT, AND EAT!</h1>
+                <h3>COMOFORTING FLAVOURS BUILT AROUND DAILY FRESH PRODUCE</h3>
+                <p>Our Western cuisine brings affordable comfort food to NYP students and staff. We focus on making the most of quality ingredients to create delicious, satisfying meals that won't break your budget. Our menu features classic Western favorites, from juicy grilled chicken chops to creamy pastas, all prepared fresh daily. Whether you're grabbing a quick lunch between classes or enjoying a relaxing meal with friends, our hearty portions and warm service will make you feel right at home.</p>
+                <p> <a href="mains.html" class="menu-button">VIEW OUR MAINS</a></p>
+            </div>
+            
+        </section>
+
+        <section class="sides-menu">
+            <div class="sides-text">
+                <h1>COMPLETE YOUR MEAL</h1>
+                <h3>ENJOY YOUR MEALS ACCOMPANIED BY WONDERFUL SIDE DISHES</h3>
+                <p>Turn your meal into a feast with our tasty sides! From crispy fries to creamy mushroom soup, these perfect companions to your main dish will satisfy any craving. Student-friendly prices, maximum satisfaction!</p>
+                <p>
+                    <a href="sidesandesserts.html" class="menu-button">VIEW OUR SIDES</a>
+                </p>
+            </div>
+            <div class="sides-poster">
+                <img src="Images/menu/sides.jpg" alt="">
+            </div>
+            
+        </section>
+
+        <section class="contact">
+            <h2 class="section-title">Find Us</h2>
+            <div class="contact-info">
+                <div class="location">
+                    <h3>Location</h3>
+                    <p>Koufu Food Court</p>
+                    <p>Nanyang Polytechnic</p>
+                    <p>180 Ang Mo Kio Avenue 8</p>
+                    <p>Singapore 569830</p>
+                    <p><a href="https://maps.app.goo.gl/f1tavhtFt8kY3Dp88">Locate Us</a></p>
+                </div>
+                <div class="contact-details">
+                    <h3>Contact Us</h3>
+                    <p>Phone: +65 9863 8123</p>
+                    <p>Email: western@koufu.nyp.edu.sg</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <h4>&copy; 2025 Western Stall @ Koufu. All rights reserved.</h4> 
+        </footer>
+
+    </main>
+</body>
+</html>
